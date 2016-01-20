@@ -1,7 +1,7 @@
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 
-
+__all__ = ['sample_module']
 class sample_module(ModelSQL, ModelView):
     # description (mandatory on first declaration)
     'Sample Module'
