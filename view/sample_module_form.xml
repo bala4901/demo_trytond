@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+ <!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+ this repository contains the full copyright notices and license terms. -->
+ <form string="Module" col="6">
+     <label name="name"/>
+     <field name="name"/>
+     <label name="version"/>
+     <field name="version"/>
+     <label name="active"/>
+     <field name="active"/>
+     <label name="date_generate"/>
+     <field name="date_generate"/>
+     <label name="save_directory"/>
+     <field name="save_directory"/>
+	 <group id="mod_external" col="6">
+		<group colspan="3" string="Depends - Tryton Module" id="mod_trytons">
+				<field name="depends"/>
+		</group>
+		<group colspan="3" string="Depends - Python Module" id="mod_python">
+				<field name="requires"/>
+		</group>
+	 </group>
+	<group col="6" colspan="2" id="mod_buttons" yfill="1">
+		<button name="generate" string="Generate Module" icon="tryton-ok"/>
+	</group>
+ </form>

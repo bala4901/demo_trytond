@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+ <tryton>
+     <data>
+         <!-- All our definitions come here -->
+		 <!-- DECLARE THE FORM/TREE VIEW -->
+		 <record model="ir.ui.view" id="sample_module_view_form">
+			 <field name="model">sample.module</field>
+			 <field name="type">form</field>
+			 <field name="name">sample_module_form</field>
+		 </record>
+		 <record model="ir.ui.view" id="sample_module_view_tree">
+			 <field name="model">sample.module</field>
+			 <field name="type">tree</field>
+			 <field name="name">sample_module_tree</field>
+		 </record>
+		 
+		 <!-- ACTION -->
+		 <record model="ir.action.act_window" id="act_sample_module_window">
+			 <field name="name">Sample Module</field>
+			 <field name="res_model">sample.module</field>
+		 </record>
+
+		 <!-- SPECIFY THE ORDER OF THE VIEW -->
+		 <record model="ir.action.act_window.view" id="act_sample_module_view1">
+			 <field name="sequence" eval="10"/>
+			 <field name="view" ref="sample_module_view_tree"/>
+			 <field name="act_window" ref="act_sample_module_window"/>
+		 </record>
+		 <record model="ir.action.act_window.view" id="act_sample_module_view2">
+			 <field name="sequence" eval="11"/>
+			 <field name="view" ref="sample_module_view_form"/>
+			 <field name="act_window" ref="act_sample_module_window"/>
+		 </record>
+
+		 <!-- MENU LIST -->
+		 <menuitem name="Sample Trytond" sequence="99" id="menu_sample_trytond"/>
+		 <menuitem name="Module" sequence="1" parent="menu_sample_trytond" id="menu_sample_module" action="act_sample_module_window"/>
+
+		 
+     </data>
+</tryton>
